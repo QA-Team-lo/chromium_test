@@ -82,7 +82,7 @@ Milk-V Pioneer Box:
 Sipeed LicheePi 4A:
 - CPU: TH1520, RISC-V 2.0G C910 x4
 - RAM: 16 GB 64bit LPDDR4X-3733
-- Storage: TF Card, 128 GB eMMC
+- Storage: 128 GB eMMC
 
 ## 软件环境
 
@@ -139,6 +139,7 @@ sudo fastboot flash root root-lpi4a-20240720_171951.ext4
 #### Milk-V Pioneer Box
 
 ##### RevyOS
+% TODO:烧固件
 下载 [RevyOS 20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/revyos-pioneer-20241025-001347.img.zst)后，使用 `zstd` 解压， `dd` 到 **NVME 硬盘**中 *（需要一个硬盘盒）*
 ```shell!
 zstd -d revyos-pioneer-20241025-001347.img.zst
@@ -170,7 +171,7 @@ sudo apt install chromium
 
 #### openEuler
 openEuler 不自带图形桌面,需要先安装图形环境,以 Gnome 为例：
-
+% TODO: 烧固件
 采用 `dnf` 进行安装：
 
 ```shell!
@@ -289,7 +290,8 @@ LicheePi 4A 和 Pioneer Box 不支持测试所需 WebGL 图形渲染，部分测
 
 # 总结
 
-本次报告评估了 Chromium 浏览器在 RISC-V 平台，包括 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 上的可用性和性能。手动测试中，Chromium在部分分发版本上表现正常，能够满足基本的浏览需求。然而，由于部分硬件和软件支持的限制，某些平台和操作系统无法完整稳定运行 Chromium，和缺少 GUI 版本或者没有软件源支持等。此外，性能测试表明，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中的得分较低，这反映出在视频播放等需要高性能处理的任务上存在显著限制。这些结果指出，尽管 Chromium 在 RISC-V 平台上已具备一定可用性，但仍需进一步优化和支持，以提高其功能完整性和性能表现。
+本次报告评估了 Chromium 浏览器在 RISC-V 平台，包括 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 上的可用性和性能。手动测试中，Chromium在部分分发版本上表现正常，能够满足基本的浏览需求。然而，由于部分硬件和软件支持的限制，某些平台和操作系统无法完整稳定运行 Chromium，和缺少 GUI 版本或者没有软件源支持等。此外，性能测试表明，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中的得分较低。在性能需求较大的场景表现不佳，此外对硬件编解码的支持亦有待完善。
+这些结果指出，尽管 Chromium 在 RISC-V 平台上已具备一定可用性，但仍需进一步优化和支持，以提高其功能完整性和性能表现。
 
 \end{markdown}
 
