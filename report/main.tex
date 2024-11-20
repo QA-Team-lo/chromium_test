@@ -142,7 +142,7 @@ sudo fastboot flash root root-lpi4a-20240720_171951.ext4
 
 ##### RevyOS
 下载 [RevyOS 20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/revyos-pioneer-20241025-001347.img.zst)后，使用 `zstd` 解压， `dd` 到 **NVME 硬盘**中 *（需要一个硬盘盒）*
-准备 microSD 读卡器和存储卡，下载 [固件](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/firmware_single_sg2042-v6.6-lts-v0p7.img) 并 `dd`` 到存储卡中。
+准备 microSD 读卡器和存储卡，下载 [固件](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/firmware_single_sg2042-v6.6-lts-v0p7.img) 并 `dd` 到存储卡中。
 ```shell!
 zstd -d revyos-pioneer-20241025-001347.img.zst
 sudo dd if=path/to/revyos-pioneer-20241025-001347.img of=/dev/your/nvme bs=4M status=progress
