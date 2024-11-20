@@ -37,6 +37,8 @@ Chromium 是一个免费的开源网络浏览器项目，主要由 Google 开发
 
 在部分系统下还使用了 Speedometer3 和 Basemark 来测试浏览器浏览网页以及图形性能。
 
+由于 openEuler RISC-V 官方发版的软件源中并没有提供 Chromium 包，且此次测试中发现此版本的 Chromium 稳定性较差，并且在 RISC-V 以外的平台也同样复现了不稳定的问题，故可认为现阶段进行测试意义不大，也因此本次测试中暂未包含 Chromium on openEuler RISC-V Pioneer 的手动测试报告。
+
 ## 测试总结
 本次测试在以下平台和系统上验证情况如下：
 
@@ -281,6 +283,7 @@ Basemark Web 3.0 是一个全面的 Web 浏览器性能基准测试，可测试�
 由于只有软解且 CPU 性能不足，视频播放遇到卡顿，在预期之中。
 
 对于openEuler上的chromium来说，在测试过程中多次崩溃，存在稳定性问题。
+
 
 ## 性能测试
 
