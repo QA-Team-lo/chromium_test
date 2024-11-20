@@ -10,7 +10,7 @@
 
 %%------------------摘要-------------%%
 \begin{abstract}
-本次测试报告旨在验证 Chromium 在 RISC-V 平台上的可用性，进行了 Chromium 在 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 两个 RISC-V 典型平台上的测试。测试涵盖了多个 Linux 发行版和 Chromium 版本，通过手动测试和性能测试评估其在 RISC-V 平台上的可用性。手动测试验证了日常使用场景，测试显示，Chromium 在RevyOS Linux 发行版上具备基本的浏览网页能力，在openEuler上存在稳定性问题，受限于硬件和软件情况，其他系统无法完整运行或缺少支持。性能评估结果显示，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中表现不佳，特别是在需要高性能的视频播放任务上。这表明尽管 Chromium 已初步支持 RISC-V 平台，但在功能完整性和性能优化上仍有改进空间。
+本次测试报告旨在验证 Chromium 在 RISC-V 平台上的可用性，并进行了 Chromium 在 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 两个 RISC-V 典型平台上的测试。测试涵盖了多个 Linux 发行版和 Chromium 版本，通过手动测试和性能测试评估其在 RISC-V 平台上的可用性。手动测试通过模拟用户日常使用场景对可用性进行验证，测试显示 Chromium 在 RevyOS Linux 发行版上具备基本的浏览网页能力，而在 openEuler 上存在稳定性问题。性能评估结果显示，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中表现不佳，尤其在需要高性能的视频播放任务上。受限于硬件和软件情况，其他系统无法完整运行或缺少支持。这表明 Chromium 已初步支持 RISC-V 平台，但在功能完整性和性能优化上仍需改进。
 \end{abstract}
 
 \thispagestyle{empty} % 首页不显示页码
@@ -30,14 +30,14 @@
 Chromium 是一个免费的开源网络浏览器项目，主要由 Google 开发和维护。它是一个广泛使用的代码库，为 Google Chrome 和许多其他浏览器（包括 Microsoft Edge、Samsung Internet 和 Opera）提供了绝大多数代码。该代码还被多个应用程序框架使用。
 
 ## 测试目的
-本次测试皆在验证 Chromium 在 RISC-V 平台上的可用性，特别是在 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 两个典型平台上的表现。通过手动测试的方法，评估了 Chromium 当前在 RISC-V 平台上的可用性，对目前的平台兼容性，及用户的日常使用体验，给出了定性和定量的结论，并为其未来进一步的优化和支持提供参考。
+本次测试皆在验证 Chromium 在 RISC-V 平台上的可用性，特别是在 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 两个典型平台上的表现。本报告通过手动测试的方法，从目前的平台兼容性及用户的日常使用体验两个角度评估了 Chromium 当前在 RISC-V 平台上的可用性，并给出了定性和定量的结论，为其未来进一步的优化和支持提供参考。
 
 ## 测试概述
-本次测试在 RISC-V 设备 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 的多个 Linux 发行版上对多个版本的 Chromium 进行了手动测试,手动测试采用贴近真实用户日常使用场景的测试用例，模拟一般用户的操作方式对 Chromium 在测试环境上的日常浏览体验进行了评估，对其目前在 RISC-V 上的可用性进行了较为全面的测试并得出了相应的结论。
+本次测试在 RISC-V 设备 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 的多个 Linux 发行版上对多个版本的 Chromium 进行了手动测试。 手动测试采用贴近真实用户日常使用场景的测试用例，模拟一般用户的操作方式对 Chromium 在测试环境上的日常浏览体验进行了评估，对其目前在 RISC-V 上的可用性进行了较为全面的测试并得出了相应的结论。
 
-在部分系统下还使用了 Speedometer3 和 Basemark 来测试浏览器浏览网页以及图形性能。
+本报告在部分 Linux 发行版下还使用了 Speedometer 3 和 Basemark 以测试浏览器浏览网页以及图形性能。
 
-由于 openEuler RISC-V 官方发版的软件源中并没有提供 Chromium 包，且此次测试中发现此版本的 Chromium 稳定性较差，并且在 RISC-V 以外的平台也同样复现了不稳定的问题，故可认为现阶段进行测试意义不大，也因此本次测试中暂未包含 Chromium on openEuler RISC-V Pioneer 的手动测试报告。
+由于 openEuler RISC-V 官方发版的软件源中并没有提供 Chromium 包，且此次测试中发现此版本的 Chromium 稳定性较差，并且在 RISC-V 以外的平台也同样复现了不稳定的问题，故可认为现阶段对此 Chromium 版本进行测试的意义不大，因此本次测试中暂未包含运行 openEuler RISC-V 的 Milk-V Pioneer Box 的手动测试报告。
 
 ## 测试总结
 本次测试在以下平台和系统上验证情况如下：
@@ -46,7 +46,7 @@ Chromium 是一个免费的开源网络浏览器项目，主要由 Google 开发
 |-------------|---------------|-----------------------|
 | Pioneer Box | RevyOS        | 可用                  |
 | LicheePi 4A | RevyOS        | 可用                  |
-| Pioneer Box | openEuler     | 可用(存在稳定性问题)   |
+| Pioneer Box | openEuler     | 可用 (存在稳定性问题)   |
 | LicheePi 4A | openEuler     | 无 GUI 版本           |
 | LicheePi 4A | Fedora        | 当前无网卡支持        |
 | Pioneer Box | Fedora        | 软件源内没有 Chromium |
@@ -89,9 +89,10 @@ Sipeed LicheePi 4A:
 ## 软件环境
 
 本次测试涵盖的系统版本和 Chromium 版本如下：
-- openEuler（仅测试 Pioneer Box）:第三方软件仓库自带 Chromium 
+- openEuler: 第三方软件仓库自带 Chromium 
   - Pioneer Box 版本: Chromium 128.0.6613.119
-- RevyOS:软件仓库自带 Chromium
+  - LicheePi 4A 版本: （未测试）
+- RevyOS: 软件仓库自带 Chromium
   - Pioneer Box 版本: Chromium 128.0.6613.113
   - LicheePi 4A 版本: Chromium 109.0.5414.119
   
@@ -113,7 +114,7 @@ Sipeed LicheePi 4A:
 
 #### Sipeed LicheePi 4A
 
-LicheePi 4A 各个系统在[支持矩阵](https://github.com/ruyisdk/support-matrix/tree/main/LicheePi4A)上详细记载了如何进行安装，可作为参考。
+LicheePi 4A 各个系统在[支持矩阵](https://github.com/ruyisdk/support-matrix/tree/main/LicheePi4A)上详细记载了安装过程，可作为参考。
 
 - RevyOS
 从 [ISCAS 镜像](https://mirror.iscas.ac.cn/revyos/extra/images/lpi4a/)下载并解压：
@@ -127,7 +128,7 @@ zstd -d root-lpi4a-20240720_171951.ext4.zst
 
 按住 boot 键后，上电/Reset 进入刷写模式。
 
-接下来刷写系统：
+刷写系统：
 ```shell!
 sudo fastboot devices
 sudo fastboot flash ram u-boot-with-spl-lpi4a.bin 
@@ -141,7 +142,7 @@ sudo fastboot flash root root-lpi4a-20240720_171951.ext4
 #### Milk-V Pioneer Box
 
 ##### RevyOS
-下载 [RevyOS 20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/revyos-pioneer-20241025-001347.img.zst)后，使用 `zstd` 解压， `dd` 到 **NVME 硬盘**中 *（需要一个硬盘盒）*
+下载 [RevyOS 20241025](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/revyos-pioneer-20241025-001347.img.zst)后，使用 `zstd` 解压， `dd` 到 **NVMe 硬盘**中 *（需要一个硬盘盒）*
 准备 microSD 读卡器和存储卡，下载 [固件](https://mirror.iscas.ac.cn/revyos/extra/images/sg2042/20241025/firmware_single_sg2042-v6.6-lts-v0p7.img) 并 `dd` 到存储卡中。
 ```shell!
 zstd -d revyos-pioneer-20241025-001347.img.zst
@@ -151,10 +152,10 @@ sudo dd if=path/to/firmware_single_sg2042-v6.6-lts-v0p7.img of=/dev/your/sdcard 
 将存储卡和硬盘插入系统后上电开机。
 
 ##### openEuler
-下载[系统镜像](https://mirrors.hust.edu.cn/openeuler/openEuler-24.03-LTS/embedded_img/riscv64/SG2042/openEuler-24.03-LTS-riscv64-sg2042.img.zip)，解压，使用 `dd` 烧录至 NVMe SSD。
+下载[系统镜像](https://mirrors.hust.edu.cn/openeuler/openEuler-24.03-LTS/embedded_img/riscv64/SG2042/openEuler-24.03-LTS-riscv64-sg2042.img.zip)，解压，使用 `dd` 烧录至 NVMe 硬盘。
 下载[固件](https://mirrors.hust.edu.cn/openeuler/openEuler-24.03-LTS/embedded_img/riscv64/SG2042/sg2042_firmware_linuxboot.img.zip)，解压，使用 `dd` 烧录至 microSD 卡。
 
-将下面的 `/dev/sda` `/dev/sdb` 替换成真实硬盘和存储卡位置。
+请将下面的 `/dev/sda` `/dev/sdb` 替换成实际使用的硬盘和存储卡位置。
 
 ```shell!
 unzip openEuler-24.03-LTS-riscv64-sg2042.img.zip
@@ -169,7 +170,7 @@ sudo dd if=sg2042_firmware_linuxboot.img of=/dev/sdb bs=1M status=progress
 ### 手动测试环境
 
 #### RevyOS
-采用 `apt` 进行安装：
+使用 `apt` 进行安装：
 ```shell!
 sudo apt update
 sudo apt upgrade
@@ -177,8 +178,7 @@ sudo apt install chromium
 ```
 
 #### openEuler
-openEuler 不自带图形桌面,需要先安装图形环境,以 Gnome 为例：
-采用 `dnf` 进行安装：
+openEuler 不自带图形桌面, 因此需要先安装图形环境。以 GNOME 为例，使用 `dnf` 进行安装：
 
 ```shell!
 sudo dnf update
@@ -239,7 +239,7 @@ gpgcheck=0
 EOL'
 ```
 
-安装 chromium：
+安装 Chromium：
 ```shell!
 sudo dnf install chromium
 ```
@@ -282,23 +282,26 @@ Basemark Web 3.0 是一个全面的 Web 浏览器性能基准测试，可测试�
 
 由于只有软解且 CPU 性能不足，视频播放遇到卡顿，在预期之中。
 
-对于openEuler上的chromium来说，在测试过程中多次崩溃，存在稳定性问题。
+Chromium 在 openEuler 上进行测试时则发生多次崩溃，存在稳定性问题。
 
 
 ## 性能测试
 
 - Speedometer 3
 
-在RevyOS上，Pioneer Box上得分`1.03`分，LicheePi 4A 得分`0.706`分，两台设备均比同系统的Firefox成绩高。作为参考，x86_64电脑得分为10-20分。
+在 RevyOS 上：Pioneer Box 得分 `1.03` 分，LicheePi 4A 得分 `0.706` 分。
+两台设备上同系统下此项的 Chromium 成绩均高于 Firefox 成绩。作为参考，现代 x86_64 计算机得分一般为 10-20 分。
 
 - Basemark
 
-LicheePi 4A 和 Pioneer Box 不支持测试所需 WebGL 图形渲染，部分测试项目会产生测试异常。在已完成的测试项目中，Pioneer Box上得分`22.87`分，LicheePi 4A 得分`16.98`分。作为参考，在配备了独立显卡的x86_64电脑上得分为2000分。
+LicheePi 4A 和 Pioneer Box 不支持测试所需 WebGL 图形渲染，部分测试项目会产生测试异常。
+在已完成的测试项目中，Pioneer Box 得分 `22.87` 分，LicheePi 4A 得分 `16.98` 分。作为参考，配备了独立显卡的现代 x86_64 计算机得分一般为 2000 分。
 
 # 总结
 
-本次报告评估了 Chromium 浏览器在 RISC-V 平台，包括 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 上的可用性和性能。手动测试中，Chromium在部分分发版本上表现正常，能够满足基本的浏览需求。然而，由于部分硬件和软件支持的限制，某些平台和操作系统无法完整稳定运行 Chromium，和缺少 GUI 版本或者没有软件源支持等。此外，性能测试表明，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中的得分较低。在性能需求较大的场景表现不佳，此外对硬件编解码的支持亦有待完善。
-这些结果指出，尽管 Chromium 在 RISC-V 平台上已具备一定可用性，但仍需进一步优化和支持，以提高其功能完整性和性能表现。
+本次报告评估了 Chromium 浏览器在 RISC-V 平台，特别是 Milk-V Pioneer Box 和 Sipeed LicheePi 4A 上的可用性和性能。手动测试中，Chromium 在部分分发版本上表现正常，能够满足基本的浏览需求。
+然而，由于部分硬件和软件支持的限制，某些平台和操作系统无法完整稳定运行 Chromium，存在缺少 GUI 版本、缺少软件源支持等问题。性能测试表明，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中的得分较低，说明其在性能需求较大的场景表现不佳，此外其对硬件编解码的支持亦有待完善。
+这些结果表明，尽管 Chromium 在 RISC-V 平台上已具备一定可用性，但仍需进一步优化和支持，以提高其功能完整性和性能表现。
 
 \end{markdown}
 
@@ -307,7 +310,7 @@ LicheePi 4A 和 Pioneer Box 不支持测试所需 WebGL 图形渲染，部分测
 
 \appendix
 
-以下是手动测试用例,结果见 \href{https://github.com/QA-Team-lo/chromium_test}{Github 仓库}
+以下是本报告使用的手动测试用例,结果见 \href{https://github.com/QA-Team-lo/chromium_test}{Github 仓库}。
 
 \begin{itemize}
     \item 下载 Chromium 中的网页以供离线阅读
