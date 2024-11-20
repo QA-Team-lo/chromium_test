@@ -242,6 +242,8 @@ Basemark Web 3.0 是一个全面的 Web 浏览器性能基准测试，可测试�
 
 由于只有软解且 CPU 性能不足，视频播放遇到卡顿，在预期之中。
 
+对于 openEuler 上的 chromium 来说,存在稳定性问题
+
 # 性能测试
 - Speedometer 3
 
