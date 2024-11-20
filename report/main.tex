@@ -10,7 +10,7 @@
 
 %%------------------摘要-------------%%
 \begin{abstract}
-本次测试报告旨在验证 Chromium 在 RISC-V 平台上的可用性，进行了 Chromium 在 Milk-V Pioneer Box 和 Sipeed LicheePi ４A 两个 RISC-V 典型平台上的测试。测试涵盖了多个 Linux 发行版和 Chromium 版本，通过手动测试和性能测试评估其在 RISC-V 平台上的可用性。手动测试验证了日常使用场景，测试显示，Chromium 在部分 Linux 发行版上具备基本的浏览网页能力，但受限于硬件和软件情况，某些系统无法完整运行或缺少支持。性能评估结果显示，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中表现不佳，特别是在需要高性能的视频播放任务上。这表明尽管 Chromium 已初步支持 RISC-V 平台，但在功能完整性和性能优化上仍有改进空间。
+本次测试报告旨在验证 Chromium 在 RISC-V 平台上的可用性，进行了 Chromium 在 Milk-V Pioneer Box 和 Sipeed LicheePi ４A 两个 RISC-V 典型平台上的测试。测试涵盖了多个 Linux 发行版和 Chromium 版本，通过手动测试和性能测试评估其在 RISC-V 平台上的可用性。手动测试验证了日常使用场景，测试显示，Chromium 在RevyOS Linux 发行版上具备基本的浏览网页能力，在openEuler上存在稳定性问题，受限于硬件和软件情况，其他系统无法完整运行或缺少支持。性能评估结果显示，RISC-V 平台上的 Chromium 在 Speedometer 3 和 Basemark 基准测试中表现不佳，特别是在需要高性能的视频播放任务上。这表明尽管 Chromium 已初步支持 RISC-V 平台，但在功能完整性和性能优化上仍有改进空间。
 \end{abstract}
 
 \thispagestyle{empty} % 首页不显示页码
@@ -233,7 +233,7 @@ EOL'
 ```
 
 安装 chromium：
-```
+```shell!
 sudo dnf install chromium
 ```
 
